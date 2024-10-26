@@ -8,7 +8,8 @@ vector<int>parent;
 vector<int>color;
 int cycleStart,cycleEnd;
 vector<vector<pair<int, pair<string,string>>>> inputData;
-vector<int>inDegree;
+// vector<int>inDegree;
+map <int, int> inDegree;
 vector<string>serial;
 
 pair<string, string> splitString(const string& input);
@@ -85,9 +86,8 @@ int main(){
     if(cycleStart==-1){
     	cout<<"Cycle Not Found!"<<endl;
         cout<<"The Schedule is Conflict Serializable"<<endl<<endl;
-        countInDegree();
-        // cout<<"Serial:";
-        // findSerial();
+        cout<<"Serial:";
+        findSerial();
     }else{
     	vector<int>cycle;
 
@@ -130,9 +130,11 @@ void printGraph(){
 }
 
 void countInDegree(){
-    inDegree.assign(SIZE,0);
     for(int i=0; i<SIZE; i++){
         if(!graph[i].empty()){
+            if(!inDegree[i]){
+                inDegree[i] = 0;
+            }
             for(int d: graph[i]){
                 inDegree[d]++;
             }
@@ -141,7 +143,25 @@ void countInDegree(){
 }
 
 void findSerial(){
-    
+    countInDegree();
+    while(!inDegree.empty()){
+        int current = -1;
+        for(auto id: inDegree){
+            if(id.second == 0){
+                serial.push_back("T" + to_string(id.first));
+                for(auto g: graph[id.first]){
+                    inDegree[g]--;
+                }
+                current = id.first;
+                break;
+            }
+        }
+        inDegree.erase(current);
+    }
+    for(auto s: serial){
+        cout << s << " ";
+    }
+    cout << endl;
 }
 
 pair<string, string> splitString(const string& input) {
