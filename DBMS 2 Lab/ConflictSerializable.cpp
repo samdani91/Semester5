@@ -8,7 +8,6 @@ vector<int>parent;
 vector<int>color;
 int cycleStart,cycleEnd;
 vector<vector<pair<int, pair<string,string>>>> inputData;
-// vector<int>inDegree;
 map <int, int> inDegree;
 vector<string>serial;
 
