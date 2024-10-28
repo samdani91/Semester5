@@ -20,7 +20,7 @@ void findSerial();
 
 int main(){
     string line;
-    ifstream file("input.txt");
+    ifstream file("test3.txt");
 
 
     if (!file.is_open()) {
@@ -99,16 +99,8 @@ int main(){
 
     	cout<<"Cycle Found:"<<endl;
     	for(auto it:cycle) cout<<it<<" ";
-        cout<<"The Schedule is not Conflict Serializable"<<endl;
+        cout<<"\nThe Schedule is not Conflict Serializable"<<endl;
     }
-
-    
-
-    // for(auto d: inputData){
-    //     for(auto p: d){
-    //         cout << p.first << " " << p.second.first << " " << p.second.second << endl;
-    //     }
-    // }
 
 
     return 0;
