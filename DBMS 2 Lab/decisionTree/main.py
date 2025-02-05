@@ -4,7 +4,7 @@ import pandas as pd
 
 
 col_names = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'type']
-data = pd.read_csv("/home/samdani1412/Desktop/Semester5/DBMS 2 Lab/decisionTree/Iris/iris.csv", skiprows=1, header=None, names=col_names)
+data = pd.read_csv("Iris\iris.csv", skiprows=1, header=None, names=col_names)
 data.head(10)
 
 class Node():
