@@ -61,10 +61,10 @@ class KDTree:
         k = len(target)
         axis = height % k
 
-        # Determine whether to go left or right
+        
         if target[axis] < root.value[axis]:
             best = self.nearestNeighbor(root.left, target, height + 1, best)
-            # Check the other side if necessary
+            
             if abs(target[axis] - root.value[axis]) < self.distance(target, best):
                 best = self.nearestNeighbor(root.right, target, height + 1, best)
         else:
@@ -105,12 +105,12 @@ print("Initial KD-Tree:")
 tree.printTree(tree.root)
 
 
-# new_point = list(map(int, input("\nEnter new point to insert (x,y): ").split(",")))
-# tree.root = tree.insert(tree.root, new_point)
-# writeDataToFile(dataFile, new_point)
 
-# print("\nKD-Tree After Insertion:")
-# tree.printTree(tree.root)
+
+
+
+
+
 
 target_point = list(map(int, input("\nEnter target point to find nearest neighbor (x,y): ").split(",")))
 nearest = tree.nearestNeighbor(tree.root, target_point)
