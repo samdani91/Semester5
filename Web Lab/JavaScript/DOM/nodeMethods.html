@@ -8,7 +8,12 @@
 </head>
 
 <body>
-    <ul id="list"><li><a href="link1.html" class="link_one">Link Number One</a></li><li><a href="link2.html">Link Number Two</a></li><li><a href="link3.html">Link Number Three</a></li><li><a href="link4.html">Link Number Four</a></li></ul>
+    <ul id="list">
+        <li><a href="link1.html" class="link_one">Link Number One</a></li>
+        <li><a href="link2.html">Link Number Two</a></li>
+        <li><a href="link3.html">Link Number Three</a></li>
+        <li><a href="link4.html">Link Number Four</a></li>
+    </ul>
 
     <button onclick="addLink()">Add Link</button>
     <button onclick="removeLink()">Delete Link</button>
@@ -22,27 +27,44 @@
 
 
         // console.log(myFirstLink)
-        // alert(myFirstLink.className);
+        alert(myFirstLink.className);
 
-        function addLink(){
-            var myNewListItem = document.createElement("li");
-            var myNewLink = document.createElement("a");
-            
-            var linkCount = myLinkList.children.length;
-            var nextLinkCount = linkCount + 1;
-            myNewLink.textContent = `Link Number ${nextLinkCount}`;
+        // function addLink(){
+        //     var myNewListItem = document.createElement("li");
+        //     var myNewLink = document.createElement("a");
 
-            myLinkList.appendChild(myNewListItem);
-            myLinkList.lastChild.appendChild(myNewLink);
-        }
+        //     var linkCount = myLinkList.children.length;
+        //     var nextLinkCount = linkCount + 1;
+        //     myNewLink.textContent = `Link Number ${nextLinkCount}`;
 
-        function removeLink(){
-            var myRemovedLink = myLinkList.lastChild;
-            if(myRemovedLink) myLinkList.removeChild(myRemovedLink);
-        }
+        //     myLinkList.appendChild(myNewListItem);
+        //     myLinkList.lastChild.appendChild(myNewLink);
+        // }
 
-        
-        
+        // function removeLink(){
+        //     var myRemovedLink = myLinkList.lastChild;
+        //     if(myRemovedLink) myLinkList.removeChild(myRemovedLink);
+        // }
+
+
+        // Create a new list item
+        var newListItem = document.createElement("li");
+
+        // Create a new anchor element
+        var newAnchor = document.createElement("a");
+        newAnchor.href = "link6.html"; // Set the link to "link6.html"
+        newAnchor.id = "link_6"; // Set the id to "link_6"
+        newAnchor.textContent = "Link Number Six"; // Set the anchor text
+
+        // Append the anchor element to the list item
+        newListItem.appendChild(newAnchor);
+
+        // Find the unordered list by its id and append the new list item at the end
+        var ulList = document.getElementById("list");
+        ulList.appendChild(newListItem);
+
+
+
     </script>
 </body>
 
