@@ -1,0 +1,10 @@
+Query optimization
+Transaction er conflict serialization 
+Recovery log
+Apriori
+Kd tree
+Decision tree
+K means clustering
+Naive bayes
+Data cube
+Ranged partitioning

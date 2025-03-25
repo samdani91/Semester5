@@ -1,0 +1,30 @@
+﻿Syllabus
+Creational Patterns:
+* Factory
+* Abstract
+* Builder
+* Prototype
+* Singleton
+
+
+Structural Patterns:
+* Adapter
+* Composite
+* Decorator
+* Facade
+* Proxy
+
+
+Behavioral Patterns:
+* Strategy
+* Chain of command
+* Template
+* Observer
+
+
+
+
+
+
+Refactoring:
+slide
